@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title%}
+  QUIZ
+{% endblock %}
+
+{% block content%}
+<form action="./result" method="post">
+  {% for que in ques %}
+  <div class="row">
+    <div class="col-md-10">
+      <h3>{{ forloop.counter }}. {{ que.question }}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <h4>
+      <input type="radio" name="{{ que.id }}" value="{{ que.optiona }}">
+      {{ que.optiona }}
+    </h4>
+    </div>
+    <div class="col-md-3">
+      <h4>
+      <input type="radio" name="{{ que.id }}" value="{{ que.optionb }}">
+      {{ que.optionb }}
+    </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <h4>
+      <input type="radio" name="{{ que.id }}" value="{{ que.optionc }}">
+      {{ que.optionc }}
+    </h4>
+    </div>
+    <div class="col-md-3">
+      <h4>
+      <input class="form_control" type="radio" name="{{ que.id }}" value="{{ que.optiond }}">
+      {{ que.optiond }}
+    </h4>
+    </div>
+  </div>
+  {% endfor %}
+  {% csrf_token %}
+  <br>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-xs-2">
+      <button type="submit" class="btn btn-block btn-success btn-md">Result</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

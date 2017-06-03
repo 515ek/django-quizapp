@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title%}
+  Result
+{% endblock %}
+
+{% block content%}
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="center">
+      Your Score is: {{ score }} / {{ total }}
+    </h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="center"
+    {% if eff < 50.0 %} style="color:red"
+    {% else %} style="color:green"
+    {% endif %}
+    >
+      Your Efficiency is: {{ eff }} %
+    </h3>
+  </div>
+</div>
+{% endblock%}

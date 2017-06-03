@@ -1,0 +1,27 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body{
+  margin-bottom: 50px;
+}
+a{
+  color: #000000;
+}
+a:hover{
+  color: green;
+  text-decoration: none;
+}
+.center{
+  text-align: center;
+}
+.footer{
+  position:absolute;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+}
+.img{
+  width: 360px;
+  height: 640px;
+}
